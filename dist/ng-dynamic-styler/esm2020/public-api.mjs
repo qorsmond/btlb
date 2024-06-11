@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of ng-dynamic-styler
+ */
+export * from './lib/dynamic-class.service';
+export * from './lib/dynamic-class.directive';
+export * from './lib/ng-dynamic-styler.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL25nLWR5bmFtaWMtc3R5bGVyL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyw2QkFBNkIsQ0FBQztBQUM1QyxjQUFjLCtCQUErQixDQUFDO0FBQzlDLGNBQWMsZ0NBQWdDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogUHVibGljIEFQSSBTdXJmYWNlIG9mIG5nLWR5bmFtaWMtc3R5bGVyXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvZHluYW1pYy1jbGFzcy5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL2R5bmFtaWMtY2xhc3MuZGlyZWN0aXZlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL25nLWR5bmFtaWMtc3R5bGVyLm1vZHVsZSc7XG4iXX0=
