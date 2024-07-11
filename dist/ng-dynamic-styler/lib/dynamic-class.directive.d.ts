@@ -9,5 +9,5 @@ export declare class DynamicClassDirective implements OnInit, OnDestroy {
     ngOnInit(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicClassDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicClassDirective, "[ngDynamicClass]", never, { "ngDynamicClassKey": "ngDynamicClassKey"; }, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicClassDirective, "[ngDynamicClass]", never, { "ngDynamicClassKey": { "alias": "ngDynamicClassKey"; "required": false; }; }, {}, never, never, false, never>;
 }
