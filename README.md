@@ -182,10 +182,10 @@ npm install @btlb/css
 
 ```css
 /* Start simple: pull in everything */
-@import 'btlb';
+@import '@btlb/css';
 ```
 
-You can later import per‑layer (`@btlb/baseline`, `@btlb/tokens`, `@btlb/layouts`, `@btlb/behaviors`) if you want more control.
+You can later install and import per‑layer (`@btlb/baseline`, `@btlb/tokens`, `@btlb/layouts`, `@btlb/behaviors`) if you want more control.
 
 ### Baseline Only: Semantic HTML That Already Works
 
