@@ -174,10 +174,10 @@ You don’t have to think about these features all the time, but they are what m
 
 This Quick Start keeps the mental model clear. We start with **pure Baseline** and only introduce layout and behavior when needed.
 
-### 6.1 Install and Import
+### Install and Import
 
 ```bash
-npm install btlb
+npm install @btlb/css
 ```
 
 ```css
@@ -185,9 +185,9 @@ npm install btlb
 @import 'btlb';
 ```
 
-You can later import per‑layer (`baseline`, `tokens`, `layouts`, `behaviors`) if you want more control.
+You can later import per‑layer (`@btlb/baseline`, `@btlb/tokens`, `@btlb/layouts`, `@btlb/behaviors`) if you want more control.
 
-### 6.2 Baseline Only: Semantic HTML That Already Works
+### Baseline Only: Semantic HTML That Already Works
 
 No classes, no attributes. Just semantic HTML and Baseline doing its job.
 
