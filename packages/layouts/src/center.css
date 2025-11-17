@@ -1,0 +1,41 @@
+@layer layouts {
+  /* Center - Constrain width, keep things readable */
+  .center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-inline-size: var(--center-max, 70ch);
+    padding-inline: var(--center-padding, var(--space-6));
+  }
+
+  /* Max width variants (in ch units for text) */
+  .center[data-max="50"] { --center-max: 50ch; }
+  .center[data-max="60"] { --center-max: 60ch; }
+  .center[data-max="70"] { --center-max: 70ch; }
+  .center[data-max="80"] { --center-max: 80ch; }
+  .center[data-max="90"] { --center-max: 90ch; }
+
+  /* Max width variants (in rem for layouts) */
+  .center[data-max="40rem"] { --center-max: 40rem; }
+  .center[data-max="48rem"] { --center-max: 48rem; }
+  .center[data-max="56rem"] { --center-max: 56rem; }
+  .center[data-max="64rem"] { --center-max: 64rem; }
+  .center[data-max="80rem"] { --center-max: 80rem; }
+
+  /* Padding variants */
+  .center[data-padding="4"] { --center-padding: var(--space-4); }
+  .center[data-padding="6"] { --center-padding: var(--space-6); }
+  .center[data-padding="8"] { --center-padding: var(--space-8); }
+  .center[data-padding="0"] { --center-padding: 0; }
+
+  /* Text centering */
+  .center[data-text="center"] {
+    text-align: center;
+  }
+
+  /* Intrinsic centering (for specific child element) */
+  .center[data-intrinsic] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

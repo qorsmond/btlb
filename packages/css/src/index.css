@@ -1,0 +1,19 @@
+/**
+ * BTLB – Baseline. Tokens. Layouts. Behaviors.
+ * A CSS design system architecture
+ *
+ * This file imports all BTLB layers in the correct cascade order:
+ * 1. Tokens (primitives & semantics)
+ * 2. Baseline (semantic HTML defaults)
+ * 3. Layouts (spatial patterns)
+ * 4. Behaviors (state & interaction)
+ */
+
+/* Establish cascade layer order */
+@layer tokens, baseline, layouts, behaviors;
+
+/* Import all layers */
+@import '@btlb/tokens';
+@import '@btlb/baseline';
+@import '@btlb/layouts';
+@import '@btlb/behaviors';

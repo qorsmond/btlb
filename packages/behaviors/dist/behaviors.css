@@ -1,0 +1,275 @@
+/* BTLB Behaviors - State and interaction rules */
+
+@layer behaviors {
+  /* Loading state */
+  [data-state="loading"] {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+  }
+
+  [data-state="loading"]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    inline-size: 1.25em;
+    block-size: 1.25em;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    border-inline-end-color: transparent;
+    animation: spin var(--motion-duration-slower) linear infinite;
+    color: var(--color-text-on-interactive);
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  /* Success state */
+  [data-state="success"] {
+    background: var(--color-status-success-bg);
+    color: var(--color-status-success-text);
+    border-color: var(--color-status-success-border);
+  }
+
+  /* Error state */
+  [data-state="error"] {
+    background: var(--color-status-error-bg);
+    color: var(--color-status-error-text);
+    border-color: var(--color-status-error-border);
+  }
+
+  /* Warning state */
+  [data-state="warning"] {
+    background: var(--color-status-warning-bg);
+    color: var(--color-status-warning-text);
+    border-color: var(--color-status-warning-border);
+  }
+
+  /* Info state */
+  [data-state="info"] {
+    background: var(--color-status-info-bg);
+    color: var(--color-status-info-text);
+    border-color: var(--color-status-info-border);
+  }
+
+  /* Active state */
+  [data-state="active"] {
+    background: var(--color-bg-interactive);
+    color: var(--color-text-on-interactive);
+    border-color: var(--color-border-interactive);
+  }
+
+  /* Disabled state */
+  [data-state="disabled"],
+  [disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  /* Interactive states for buttons specifically */
+  button[data-state="idle"]:hover {
+    background: var(--color-bg-interactive-hover);
+  }
+
+  button[data-state="idle"]:active {
+    background: var(--color-bg-interactive-active);
+    transform: scale(0.98);
+  }
+}
+
+@layer behaviors {
+  /* Fade motion */
+  [data-motion="fade"] {
+    transition: opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="fade"][data-state="hidden"],
+  [data-motion="fade"][hidden] {
+    opacity: 0;
+  }
+
+  /* Slide up motion */
+  [data-motion="slide-up"] {
+    transition:
+      transform var(--motion-duration-base) var(--motion-easing-out),
+      opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="slide-up"][data-state="hidden"],
+  [data-motion="slide-up"][hidden] {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  /* Scale motion */
+  [data-motion="scale"] {
+    transition:
+      transform var(--motion-duration-base) var(--motion-easing-spring),
+      opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="scale"][data-state="hidden"],
+  [data-motion="scale"][hidden] {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  /* Interactive motion hints */
+  [data-motion="interactive"] {
+    transition: transform var(--motion-duration-fast) var(--motion-easing-out);
+  }
+
+  [data-motion="interactive"]:hover {
+    transform: translateY(-2px);
+  }
+
+  [data-motion="interactive"]:active {
+    transform: translateY(0);
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    [data-motion],
+    [data-motion] * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Duration utilities */
+  [data-motion-duration="fast"] {
+    --motion-duration: var(--motion-duration-fast);
+  }
+
+  [data-motion-duration="base"] {
+    --motion-duration: var(--motion-duration-base);
+  }
+
+  [data-motion-duration="slow"] {
+    --motion-duration: var(--motion-duration-slow);
+  }
+
+  /* Easing utilities */
+  [data-motion-easing="linear"] {
+    --motion-easing: var(--motion-easing-linear);
+  }
+
+  [data-motion-easing="in"] {
+    --motion-easing: var(--motion-easing-in);
+  }
+
+  [data-motion-easing="out"] {
+    --motion-easing: var(--motion-easing-out);
+  }
+
+  [data-motion-easing="in-out"] {
+    --motion-easing: var(--motion-easing-inOut);
+  }
+
+  [data-motion-easing="spring"] {
+    --motion-easing: var(--motion-easing-spring);
+  }
+}
+
+@layer behaviors {
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg-interactive);
+    color: var(--color-text-on-interactive);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform var(--motion-duration-fast) var(--motion-easing-out);
+    z-index: 9999;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Focus within - show focus indicator for parent when child is focused */
+  [data-focus-within]:focus-within {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+
+  /* Keyboard navigation indicator */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Disabled interactive elements */
+  [aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Live regions for announcements */
+  [aria-live] {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  [aria-live][data-visible] {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :focus-visible {
+      outline-width: 3px;
+      outline-offset: 3px;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      border-width: 2px;
+    }
+  }
+
+  /* Respect prefers-reduced-transparency */
+  @media (prefers-reduced-transparency: reduce) {
+    * {
+      backdrop-filter: none !important;
+    }
+  }
+}

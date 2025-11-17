@@ -1,0 +1,39 @@
+{
+  "name": "btlb-monorepo",
+  "version": "1.0.0",
+  "description": "BTLB - Baseline. Tokens. Layouts. Behaviors. A design system CSS architecture.",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -ws --if-present",
+    "build:tokens": "npm run build -w @btlb/tokens",
+    "build:baseline": "npm run build -w @btlb/baseline",
+    "build:layouts": "npm run build -w @btlb/layouts",
+    "build:behaviors": "npm run build -w @btlb/behaviors",
+    "build:css": "npm run build -w @btlb/css",
+    "clean": "rm -rf packages/*/dist packages/*/build",
+    "version": "npm version -ws",
+    "publish:all": "npm publish -ws --access public"
+  },
+  "keywords": [
+    "css",
+    "design-system",
+    "design-tokens",
+    "w3c",
+    "dtcg",
+    "cascade-layers",
+    "baseline",
+    "layouts",
+    "behaviors",
+    "btlb"
+  ],
+  "author": "Quintin Orsmond",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qorsmond/btlb.git"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,125 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": {
+      "surface": {
+        "$value": "{color.white}",
+        "$description": "Default background for surfaces like cards, panels"
+      },
+      "raised": {
+        "$value": "{color.gray.50}",
+        "$description": "Elevated surfaces, modals, popovers"
+      },
+      "sunken": {
+        "$value": "{color.gray.100}",
+        "$description": "Recessed areas, wells"
+      },
+      "canvas": {
+        "$value": "{color.gray.50}",
+        "$description": "Page/app background"
+      },
+      "interactive": {
+        "$value": "{color.blue.600}",
+        "$description": "Primary interactive elements (buttons, links)"
+      },
+      "interactive-hover": {
+        "$value": "{color.blue.700}",
+        "$description": "Hover state for interactive elements"
+      },
+      "interactive-active": {
+        "$value": "{color.blue.800}",
+        "$description": "Active/pressed state for interactive elements"
+      },
+      "subtle": {
+        "$value": "{color.gray.100}",
+        "$description": "Subtle background for secondary actions"
+      },
+      "subtle-hover": {
+        "$value": "{color.gray.200}",
+        "$description": "Hover state for subtle backgrounds"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.gray.900}",
+        "$description": "Primary text color"
+      },
+      "secondary": {
+        "$value": "{color.gray.600}",
+        "$description": "Secondary, less emphasized text"
+      },
+      "tertiary": {
+        "$value": "{color.gray.500}",
+        "$description": "Tertiary, de-emphasized text"
+      },
+      "on-interactive": {
+        "$value": "{color.white}",
+        "$description": "Text on interactive backgrounds"
+      },
+      "link": {
+        "$value": "{color.blue.600}",
+        "$description": "Link text color"
+      },
+      "link-hover": {
+        "$value": "{color.blue.700}",
+        "$description": "Link hover color"
+      },
+      "disabled": {
+        "$value": "{color.gray.400}",
+        "$description": "Disabled text"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.gray.200}",
+        "$description": "Default border color"
+      },
+      "strong": {
+        "$value": "{color.gray.300}",
+        "$description": "Stronger borders for emphasis"
+      },
+      "subtle": {
+        "$value": "{color.gray.100}",
+        "$description": "Subtle borders"
+      },
+      "interactive": {
+        "$value": "{color.blue.600}",
+        "$description": "Interactive element borders"
+      },
+      "focus": {
+        "$value": "{color.blue.500}",
+        "$description": "Focus ring color"
+      },
+      "error": {
+        "$value": "{color.red.500}",
+        "$description": "Error state borders"
+      },
+      "success": {
+        "$value": "{color.green.500}",
+        "$description": "Success state borders"
+      }
+    },
+    "status": {
+      "success": {
+        "bg": { "$value": "{color.green.50}" },
+        "text": { "$value": "{color.green.700}" },
+        "border": { "$value": "{color.green.200}" }
+      },
+      "error": {
+        "bg": { "$value": "{color.red.50}" },
+        "text": { "$value": "{color.red.700}" },
+        "border": { "$value": "{color.red.200}" }
+      },
+      "warning": {
+        "bg": { "$value": "{color.amber.50}" },
+        "text": { "$value": "{color.amber.700}" },
+        "border": { "$value": "{color.amber.200}" }
+      },
+      "info": {
+        "bg": { "$value": "{color.blue.50}" },
+        "text": { "$value": "{color.blue.700}" },
+        "border": { "$value": "{color.blue.200}" }
+      }
+    }
+  }
+}

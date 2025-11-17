@@ -1,0 +1,95 @@
+@layer behaviors {
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg-interactive);
+    color: var(--color-text-on-interactive);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform var(--motion-duration-fast) var(--motion-easing-out);
+    z-index: 9999;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Focus within - show focus indicator for parent when child is focused */
+  [data-focus-within]:focus-within {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+
+  /* Keyboard navigation indicator */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Disabled interactive elements */
+  [aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Live regions for announcements */
+  [aria-live] {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  [aria-live][data-visible] {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :focus-visible {
+      outline-width: 3px;
+      outline-offset: 3px;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      border-width: 2px;
+    }
+  }
+
+  /* Respect prefers-reduced-transparency */
+  @media (prefers-reduced-transparency: reduce) {
+    * {
+      backdrop-filter: none !important;
+    }
+  }
+}

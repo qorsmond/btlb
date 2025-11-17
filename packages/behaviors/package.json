@@ -1,0 +1,35 @@
+{
+  "name": "@btlb/behaviors",
+  "version": "1.0.0",
+  "description": "State and interaction behaviors for BTLB design system",
+  "type": "module",
+  "main": "dist/behaviors.css",
+  "exports": {
+    ".": "./dist/behaviors.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "@btlb/tokens": "^1.0.0"
+  },
+  "keywords": [
+    "css",
+    "behaviors",
+    "state-management",
+    "design-system"
+  ],
+  "author": "Quintin Orsmond",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.28.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "cssnano": "^7.0.6"
+  }
+}

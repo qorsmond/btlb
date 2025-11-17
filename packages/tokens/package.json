@@ -1,0 +1,31 @@
+{
+  "name": "@btlb/tokens",
+  "version": "1.0.0",
+  "description": "W3C Design Tokens for BTLB design system",
+  "type": "module",
+  "main": "dist/tokens.css",
+  "exports": {
+    ".": "./dist/tokens.css",
+    "./primitives.css": "./dist/primitives.css",
+    "./semantic.css": "./dist/semantic.css",
+    "./tokens/*.json": "./tokens/*/*.json"
+  },
+  "files": [
+    "dist",
+    "tokens"
+  ],
+  "scripts": {
+    "build": "node scripts/build-tokens.js"
+  },
+  "keywords": [
+    "design-tokens",
+    "w3c",
+    "dtcg",
+    "css-variables"
+  ],
+  "author": "Quintin Orsmond",
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^4.2.0"
+  }
+}

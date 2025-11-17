@@ -1,0 +1,95 @@
+@layer behaviors {
+  /* Fade motion */
+  [data-motion="fade"] {
+    transition: opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="fade"][data-state="hidden"],
+  [data-motion="fade"][hidden] {
+    opacity: 0;
+  }
+
+  /* Slide up motion */
+  [data-motion="slide-up"] {
+    transition:
+      transform var(--motion-duration-base) var(--motion-easing-out),
+      opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="slide-up"][data-state="hidden"],
+  [data-motion="slide-up"][hidden] {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  /* Scale motion */
+  [data-motion="scale"] {
+    transition:
+      transform var(--motion-duration-base) var(--motion-easing-spring),
+      opacity var(--motion-duration-base) var(--motion-easing-out);
+  }
+
+  [data-motion="scale"][data-state="hidden"],
+  [data-motion="scale"][hidden] {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  /* Interactive motion hints */
+  [data-motion="interactive"] {
+    transition: transform var(--motion-duration-fast) var(--motion-easing-out);
+  }
+
+  [data-motion="interactive"]:hover {
+    transform: translateY(-2px);
+  }
+
+  [data-motion="interactive"]:active {
+    transform: translateY(0);
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    [data-motion],
+    [data-motion] * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Duration utilities */
+  [data-motion-duration="fast"] {
+    --motion-duration: var(--motion-duration-fast);
+  }
+
+  [data-motion-duration="base"] {
+    --motion-duration: var(--motion-duration-base);
+  }
+
+  [data-motion-duration="slow"] {
+    --motion-duration: var(--motion-duration-slow);
+  }
+
+  /* Easing utilities */
+  [data-motion-easing="linear"] {
+    --motion-easing: var(--motion-easing-linear);
+  }
+
+  [data-motion-easing="in"] {
+    --motion-easing: var(--motion-easing-in);
+  }
+
+  [data-motion-easing="out"] {
+    --motion-easing: var(--motion-easing-out);
+  }
+
+  [data-motion-easing="in-out"] {
+    --motion-easing: var(--motion-easing-inOut);
+  }
+
+  [data-motion-easing="spring"] {
+    --motion-easing: var(--motion-easing-spring);
+  }
+}

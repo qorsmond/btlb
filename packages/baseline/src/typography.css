@@ -1,0 +1,129 @@
+@layer baseline {
+  /* Body text */
+  body {
+    font-family: var(--typography-body-font-family);
+    font-size: var(--typography-body-font-size);
+    font-weight: var(--typography-body-font-weight);
+    line-height: var(--typography-body-line-height);
+    color: var(--color-text-primary);
+    background: var(--color-bg-canvas);
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--typography-heading-font-family);
+    font-weight: var(--typography-heading-font-weight);
+    line-height: var(--typography-heading-line-height);
+    color: var(--color-text-primary);
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-xl);
+  }
+
+  h5 {
+    font-size: var(--font-size-lg);
+  }
+
+  h6 {
+    font-size: var(--font-size-base);
+  }
+
+  /* Paragraphs */
+  p {
+    color: var(--color-text-primary);
+  }
+
+  /* Links */
+  a {
+    color: var(--color-text-link);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  a:hover {
+    color: var(--color-text-link-hover);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Strong and emphasis */
+  strong,
+  b {
+    font-weight: var(--font-weight-bold);
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  /* Small text */
+  small {
+    font-size: var(--typography-caption-font-size);
+    line-height: var(--typography-caption-line-height);
+  }
+
+  /* Code */
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--typography-code-font-family);
+    font-size: var(--typography-code-font-size);
+  }
+
+  code {
+    padding: 0.125em 0.25em;
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-sm);
+  }
+
+  pre {
+    padding: var(--space-4);
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+  }
+
+  pre code {
+    padding: 0;
+    background: none;
+  }
+
+  /* Blockquote */
+  blockquote {
+    padding-inline-start: var(--space-4);
+    border-inline-start: 3px solid var(--color-border-default);
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  /* Horizontal rule */
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-border-default);
+    margin-block: var(--space-6);
+  }
+}

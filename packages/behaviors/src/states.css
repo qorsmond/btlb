@@ -1,0 +1,81 @@
+@layer behaviors {
+  /* Loading state */
+  [data-state="loading"] {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+  }
+
+  [data-state="loading"]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    inline-size: 1.25em;
+    block-size: 1.25em;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    border-inline-end-color: transparent;
+    animation: spin var(--motion-duration-slower) linear infinite;
+    color: var(--color-text-on-interactive);
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  /* Success state */
+  [data-state="success"] {
+    background: var(--color-status-success-bg);
+    color: var(--color-status-success-text);
+    border-color: var(--color-status-success-border);
+  }
+
+  /* Error state */
+  [data-state="error"] {
+    background: var(--color-status-error-bg);
+    color: var(--color-status-error-text);
+    border-color: var(--color-status-error-border);
+  }
+
+  /* Warning state */
+  [data-state="warning"] {
+    background: var(--color-status-warning-bg);
+    color: var(--color-status-warning-text);
+    border-color: var(--color-status-warning-border);
+  }
+
+  /* Info state */
+  [data-state="info"] {
+    background: var(--color-status-info-bg);
+    color: var(--color-status-info-text);
+    border-color: var(--color-status-info-border);
+  }
+
+  /* Active state */
+  [data-state="active"] {
+    background: var(--color-bg-interactive);
+    color: var(--color-text-on-interactive);
+    border-color: var(--color-border-interactive);
+  }
+
+  /* Disabled state */
+  [data-state="disabled"],
+  [disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  /* Interactive states for buttons specifically */
+  button[data-state="idle"]:hover {
+    background: var(--color-bg-interactive-hover);
+  }
+
+  button[data-state="idle"]:active {
+    background: var(--color-bg-interactive-active);
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "typography": {
+    "body": {
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.sans}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{font.size.base}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.normal}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.lineHeight.normal}"
+      }
+    },
+    "heading": {
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.sans}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.bold}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.lineHeight.tight}"
+      }
+    },
+    "label": {
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}"
+      }
+    },
+    "caption": {
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.lineHeight.snug}"
+      }
+    },
+    "code": {
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.mono}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@layer layouts {
+  /* Sidebar - Fixed sidebar + flexible main */
+  .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sidebar-gap, var(--space-6));
+  }
+
+  /* Default: first child is sidebar */
+  .sidebar > :first-child {
+    flex-basis: var(--sidebar-width, 16rem);
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%;
+  }
+
+  /* Reverse: last child is sidebar */
+  .sidebar[data-side="end"] > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%;
+  }
+
+  .sidebar[data-side="end"] > :last-child {
+    flex-basis: var(--sidebar-width, 16rem);
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  /* Sidebar width variants (in rem) */
+  .sidebar[data-sidebar-width="12"] { --sidebar-width: 12rem; }
+  .sidebar[data-sidebar-width="14"] { --sidebar-width: 14rem; }
+  .sidebar[data-sidebar-width="16"] { --sidebar-width: 16rem; }
+  .sidebar[data-sidebar-width="18"] { --sidebar-width: 18rem; }
+  .sidebar[data-sidebar-width="20"] { --sidebar-width: 20rem; }
+  .sidebar[data-sidebar-width="24"] { --sidebar-width: 24rem; }
+
+  /* Gap variants */
+  .sidebar[data-gap="4"] { --sidebar-gap: var(--space-4); }
+  .sidebar[data-gap="5"] { --sidebar-gap: var(--space-5); }
+  .sidebar[data-gap="6"] { --sidebar-gap: var(--space-6); }
+  .sidebar[data-gap="8"] { --sidebar-gap: var(--space-8); }
+  .sidebar[data-gap="10"] { --sidebar-gap: var(--space-10); }
+}

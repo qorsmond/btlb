@@ -1,0 +1,37 @@
+{
+  "name": "@btlb/layouts",
+  "version": "1.0.0",
+  "description": "Layout patterns for BTLB design system",
+  "type": "module",
+  "main": "dist/layouts.css",
+  "exports": {
+    ".": "./dist/layouts.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "@btlb/tokens": "^1.0.0"
+  },
+  "keywords": [
+    "css",
+    "layouts",
+    "design-system",
+    "stack",
+    "cluster",
+    "grid"
+  ],
+  "author": "Quintin Orsmond",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.28.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "cssnano": "^7.0.6"
+  }
+}

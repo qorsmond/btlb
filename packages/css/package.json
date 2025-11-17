@@ -1,0 +1,40 @@
+{
+  "name": "@btlb/css",
+  "version": "1.0.0",
+  "description": "Complete BTLB design system (all layers bundled)",
+  "type": "module",
+  "main": "dist/btlb.css",
+  "exports": {
+    ".": "./dist/btlb.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@btlb/tokens": "^1.0.0",
+    "@btlb/baseline": "^1.0.0",
+    "@btlb/layouts": "^1.0.0",
+    "@btlb/behaviors": "^1.0.0"
+  },
+  "keywords": [
+    "css",
+    "design-system",
+    "btlb",
+    "tokens",
+    "baseline",
+    "layouts",
+    "behaviors"
+  ],
+  "author": "Quintin Orsmond",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.28.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "cssnano": "^7.0.6"
+  }
+}

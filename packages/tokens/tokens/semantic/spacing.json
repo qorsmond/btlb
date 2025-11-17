@@ -1,0 +1,69 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "card": {
+      "padding": {
+        "$value": "{space.6}",
+        "$description": "Default padding for cards"
+      },
+      "gap": {
+        "$value": "{space.4}",
+        "$description": "Gap between card elements"
+      }
+    },
+    "button": {
+      "padding-x": {
+        "$value": "{space.4}",
+        "$description": "Horizontal padding for buttons"
+      },
+      "padding-y": {
+        "$value": "{space.2}",
+        "$description": "Vertical padding for buttons"
+      },
+      "gap": {
+        "$value": "{space.2}",
+        "$description": "Gap between button icon and text"
+      }
+    },
+    "input": {
+      "padding-x": {
+        "$value": "{space.3}",
+        "$description": "Horizontal padding for inputs"
+      },
+      "padding-y": {
+        "$value": "{space.2}",
+        "$description": "Vertical padding for inputs"
+      }
+    },
+    "section": {
+      "padding": {
+        "$value": "{space.8}",
+        "$description": "Section padding"
+      },
+      "gap": {
+        "$value": "{space.6}",
+        "$description": "Gap between sections"
+      }
+    },
+    "page": {
+      "padding-x": {
+        "$value": "{space.6}",
+        "$description": "Horizontal page gutters"
+      },
+      "padding-y": {
+        "$value": "{space.8}",
+        "$description": "Vertical page padding"
+      }
+    },
+    "stack": {
+      "gap-tight": { "$value": "{space.2}" },
+      "gap-normal": { "$value": "{space.4}" },
+      "gap-loose": { "$value": "{space.6}" }
+    },
+    "cluster": {
+      "gap-tight": { "$value": "{space.2}" },
+      "gap-normal": { "$value": "{space.3}" },
+      "gap-loose": { "$value": "{space.4}" }
+    }
+  }
+}

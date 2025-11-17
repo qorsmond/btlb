@@ -1,0 +1,31 @@
+@layer layouts {
+  /* Grid - Responsive cards with minimum width */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min, 280px), 100%), 1fr));
+    gap: var(--grid-gap, var(--space-5));
+  }
+
+  /* Minimum width variants (in pixels) */
+  .grid[data-min="200"] { --grid-min: 200px; }
+  .grid[data-min="240"] { --grid-min: 240px; }
+  .grid[data-min="280"] { --grid-min: 280px; }
+  .grid[data-min="320"] { --grid-min: 320px; }
+  .grid[data-min="360"] { --grid-min: 360px; }
+  .grid[data-min="400"] { --grid-min: 400px; }
+
+  /* Gap variants */
+  .grid[data-gap="2"] { --grid-gap: var(--space-2); }
+  .grid[data-gap="3"] { --grid-gap: var(--space-3); }
+  .grid[data-gap="4"] { --grid-gap: var(--space-4); }
+  .grid[data-gap="5"] { --grid-gap: var(--space-5); }
+  .grid[data-gap="6"] { --grid-gap: var(--space-6); }
+  .grid[data-gap="8"] { --grid-gap: var(--space-8); }
+  .grid[data-gap="10"] { --grid-gap: var(--space-10); }
+
+  /* Alignment variants */
+  .grid[data-align="start"] { align-items: start; }
+  .grid[data-align="center"] { align-items: center; }
+  .grid[data-align="end"] { align-items: end; }
+  .grid[data-align="stretch"] { align-items: stretch; }
+}
