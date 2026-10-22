@@ -555,7 +555,7 @@
       linear-gradient(-45deg, transparent calc(50% - 0.8px), currentColor calc(50% - 0.8px) calc(50% + 0.8px), transparent calc(50% + 0.8px));
     background-repeat: no-repeat;
     background-position:
-      right calc(var(--space-3) + 0.4rem) center,
+      right calc(var(--space-3) + 0.4rem - 1px) center,
       right var(--space-3) center;
     background-size: 0.4rem 0.4rem;
     padding-inline-end: var(--space-8);
