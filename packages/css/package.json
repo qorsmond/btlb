@@ -1,6 +1,6 @@
 {
   "name": "@btlb/css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Complete BTLB design system (all layers bundled)",
   "type": "module",
   "main": "dist/btlb.css",
@@ -14,10 +14,10 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@btlb/tokens": "^1.0.0",
-    "@btlb/baseline": "^1.0.0",
-    "@btlb/layouts": "^1.0.0",
-    "@btlb/behaviors": "^1.0.0"
+    "@btlb/tokens": "^1.1.0",
+    "@btlb/baseline": "^1.1.0",
+    "@btlb/layouts": "^1.1.0",
+    "@btlb/behaviors": "^1.1.0"
   },
   "keywords": [
     "css",

@@ -35,6 +35,7 @@
   --color-status-info-bg: var(--color-blue-50);
   --color-status-info-text: var(--color-blue-700);
   --color-status-info-border: var(--color-blue-200);
+  --spacing-touch-target: var(--space-11);
   --spacing-card-padding: var(--space-6);
   --spacing-card-gap: var(--space-4);
   --spacing-button-padding-x: var(--space-4);

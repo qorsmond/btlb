@@ -127,6 +127,7 @@
   --space-7: 1.75rem;
   --space-8: 2rem;
   --space-10: 2.5rem;
+  --space-11: 2.75rem;
   --space-12: 3rem;
   --space-14: 3.5rem;
   --space-16: 4rem;
@@ -166,6 +167,7 @@
   --font-lineHeight-normal: 1.5;
   --font-lineHeight-relaxed: 1.625;
   --font-lineHeight-loose: 2;
+  --spacing-touch-target: var(--space-11);
   --spacing-card-padding: var(--space-6);
   --spacing-card-gap: var(--space-4);
   --spacing-button-padding-x: var(--space-4);

@@ -1,6 +1,6 @@
 {
   "name": "@btlb/layouts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Layout patterns for BTLB design system",
   "type": "module",
   "main": "dist/layouts.css",

@@ -1,6 +1,10 @@
 {
   "spacing": {
     "$type": "dimension",
+    "touch-target": {
+      "$value": "{space.11}",
+      "$description": "Smallest hit area for anything a finger has to press (WCAG 2.5.5)"
+    },
     "card": {
       "padding": {
         "$value": "{space.6}",

@@ -176,7 +176,16 @@ The single source of truth for visual decisions. Split into two tiers:
 
 Components only use semantics. If brand colors, elevation, or density change, you update semantic tokens. You can support multiple themes or brands without rewriting components.
 
-**Bridge Tokens** handle cases where a primitive needs different values at different breakpoints (e.g., desktop vs. mobile font sizes). Instead of forcing components to pick between `--font-size-desktop-h1` and `--font-size-mobile-h1`, a bridge token resolves it once with a mobile-first default and a media query override:
+**Fluid tokens** handle values that should differ between a phone and a desktop (type sizes, section spacing). Write the range once with `clamp()` and components never think about screen size. When the value belongs to a box rather than the screen (a card's padding, a heading inside a panel), use container units: `cqi` reads the nearest container, and with none it falls back to the viewport.
+
+```css
+:root {
+  --font-size-h1: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
+  --card-padding: clamp(1.25rem, 7cqi, 3rem); /* grows with the card's container */
+}
+```
+
+**Bridge Tokens** remain for the rarer case where a value must jump rather than scale (e.g., two distinct type ramps). Instead of forcing components to pick between `--font-size-desktop-h1` and `--font-size-mobile-h1`, a bridge token resolves it once with a mobile-first default and a media query override:
 
 ```css
 :root {
@@ -203,8 +212,18 @@ A small set of composable patterns:
 | `.grid` | Responsive cards with min width | Product grids, dashboards |
 | `.sidebar` | Fixed side + flexible main | App shells, docs, settings |
 | `.center` | Constrain width for readability | Articles, marketing pages |
+| `.switcher` | Side by side while every part has room, stacked when not | Hero splits, media + text, two-pane demos |
 
-Others (`.frame`, `.reel`, `.switcher`) follow the same convention: **class = intent, data attributes = configuration, tokens = values.**
+Others (`.frame`, `.reel`) follow the same convention: **class = intent, data attributes = configuration, tokens = values.**
+
+**Respond to the space you are given.** `.grid`, `.sidebar` and `.switcher` change shape by their own width, with no breakpoint, so a component looks right in a page column, a card or a sidebar. Reach for them first; use a container query when a component rearranges its own insides (give its root `container-type: inline-size`); keep viewport media queries for what is genuinely about the screen, such as sticky chrome or a first-screen height.
+
+```html
+<section class="switcher" data-threshold="40" data-ratio="3:2">
+  <div>Words</div>
+  <figure>Drawing</figure>
+</section>
+```
 
 ```html
 <div class="grid" data-min="280" data-gap="5">
@@ -238,6 +257,8 @@ How components respond to state and interaction:
 ```
 
 Interaction rules are centralized. When you refine focus rings, loading animations, or error highlighting, you change them in one place. The state contract works with any framework.
+
+Behaviors assume no mouse: hover effects live under `@media (hover: hover)` so a tap never leaves an element stuck mid-hover, and under `@media (pointer: coarse)` Baseline's controls are at least `--spacing-touch-target` (44px) tall.
 
 ---
 

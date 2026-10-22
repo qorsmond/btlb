@@ -1,6 +1,6 @@
 {
   "name": "@btlb/tokens",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "W3C Design Tokens for BTLB design system",
   "type": "module",
   "main": "dist/tokens.css",

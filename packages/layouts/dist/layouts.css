@@ -201,3 +201,55 @@
     align-items: center;
   }
 }
+
+@layer layouts {
+  /* Switcher - side by side while every part has room, stacked when not.
+     The threshold is the pattern's own inline size at which the parts stop
+     fitting; no media or container query is involved, so it responds to
+     whatever space it is given, not to the viewport. */
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--switcher-gap, var(--space-6));
+    align-items: var(--switcher-align, stretch);
+  }
+
+  .switcher > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--switcher-threshold, 40rem) - 100%) * 999);
+    min-inline-size: 0;
+  }
+
+  /* Threshold variants (in rem): below this width the parts stack. */
+  .switcher[data-threshold="30"] { --switcher-threshold: 30rem; }
+  .switcher[data-threshold="36"] { --switcher-threshold: 36rem; }
+  .switcher[data-threshold="40"] { --switcher-threshold: 40rem; }
+  .switcher[data-threshold="44"] { --switcher-threshold: 44rem; }
+  .switcher[data-threshold="48"] { --switcher-threshold: 48rem; }
+  .switcher[data-threshold="52"] { --switcher-threshold: 52rem; }
+  .switcher[data-threshold="56"] { --switcher-threshold: 56rem; }
+
+  /* Ratio variants: how two parts share the row once side by side. */
+  .switcher[data-ratio="4:3"] > :first-child { flex-grow: 4; }
+  .switcher[data-ratio="4:3"] > :last-child { flex-grow: 3; }
+  .switcher[data-ratio="3:2"] > :first-child { flex-grow: 3; }
+  .switcher[data-ratio="3:2"] > :last-child { flex-grow: 2; }
+  .switcher[data-ratio="2:1"] > :first-child { flex-grow: 2; }
+  .switcher[data-ratio="3:4"] > :first-child { flex-grow: 3; }
+  .switcher[data-ratio="3:4"] > :last-child { flex-grow: 4; }
+  .switcher[data-ratio="2:3"] > :first-child { flex-grow: 2; }
+  .switcher[data-ratio="2:3"] > :last-child { flex-grow: 3; }
+  .switcher[data-ratio="1:2"] > :last-child { flex-grow: 2; }
+
+  /* Gap variants */
+  .switcher[data-gap="4"] { --switcher-gap: var(--space-4); }
+  .switcher[data-gap="6"] { --switcher-gap: var(--space-6); }
+  .switcher[data-gap="8"] { --switcher-gap: var(--space-8); }
+  .switcher[data-gap="12"] { --switcher-gap: var(--space-12); }
+  .switcher[data-gap="loose"] { --switcher-gap: var(--spacing-section-gap); }
+
+  /* Alignment variants */
+  .switcher[data-align="start"] { --switcher-align: flex-start; }
+  .switcher[data-align="center"] { --switcher-align: center; }
+  .switcher[data-align="end"] { --switcher-align: flex-end; }
+}

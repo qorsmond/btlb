@@ -40,8 +40,12 @@
     transition: transform var(--motion-duration-fast) var(--motion-easing-out);
   }
 
-  [data-motion="interactive"]:hover {
-    transform: translateY(-2px);
+  /* Only where the pointer can hover: on a touch screen a tap would leave
+     the element lifted. */
+  @media (hover: hover) {
+    [data-motion="interactive"]:hover {
+      transform: translateY(-2px);
+    }
   }
 
   [data-motion="interactive"]:active {
